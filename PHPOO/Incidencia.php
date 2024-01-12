@@ -43,14 +43,15 @@ public function __construct($puesto, $mensaje) {
     self::$incidencia++;
 }   
 public function resuelve($solucion){
-   $this->estado = "Resuelto";
+   $this->solucion = $solucion;
+   $this->estado = "Resuelto - ".$solucion;
    self::$incidencia--;
 }
 public static function getPendientes(){
    return self::$incidencia;
 }
 public function __toString(){
-    return "Incidencia ".self::$codigo++." - Puesto: $this->puesto - $this->mensaje - $this->estado \n";
+    return "Incidencia ".self::$codigo++." - Puesto: $this->puesto - $this->mensaje - $this->estado\n";
 }
 }
 ?>
