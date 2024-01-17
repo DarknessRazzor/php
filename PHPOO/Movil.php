@@ -6,18 +6,21 @@ class Movil extends Terminal {
     public $minutosTarifa = 0;
     public $segundosTarifa = 0;
     public $precio = 0;
-    public function llama($objeto, $minutosTarifa){
-        parent::llama($objeto, $minutosTarifa);
+    public function llama($objeto, $segundosTarifa){
+        parent::llama($objeto, $segundosTarifa);
         switch($this->tarifa){
             case "rata";
-                $this->precio = $this->getMinutosTarifa() * 0.06;
+                $this->precio += $segundosTarifa/60 * 0.06;
+                $this->segundosTarifa += $segundosTarifa;
                 break;
             case "mono";
-                $this->precio = $this->getMinutosTarifa() * 0.12;
-                 break;
+                $this->precio += $segundosTarifa/60 * 0.12;
+                $this->segundosTarifa += $segundosTarifa;
+                break;
             case "bisonte";
-                $this->precio = $this->getMinutosTarifa() * 0.30;
-                 break;
+                $this->precio += $segundosTarifa/60 * 0.30;
+                $this->segundosTarifa += $segundosTarifa;
+                break;
         }
     }
     public function setTelefono($telefono){
@@ -54,9 +57,8 @@ class Movil extends Terminal {
         $this->telefono = $telefono;
         $this->tarifa = $tarifa;
     }
-
     public function __toString(){
-        return "Nº ".$this->getTelefono()." - ".$this->getMinutosTotales()." m y ".$this->getSegundosTotales()." s de conversación total - tarificados ".$this->getMinutosTarifa()." m y ".$this->getSegundosTarifa()." s por un importe de ".$this->getPrecio()." euros\n";
+        return "Nº ".$this->getTelefono()." - ".floor($this->getTiempoConversacion()/60)." m y ".round($this->getTiempoConversacion()%60)." s de conversación total - tarificados ".floor($this->getSegundosTarifa()/60)." m y ".round($this->getSegundosTarifa()%60)." s por un importe de ".$this->getPrecio()." euros\n";
     }
 }
 

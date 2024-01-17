@@ -1,20 +1,16 @@
 <?php 
-class Coche{
-    public function __construct(){
-
+include_once "Vehiculo.php";
+class Coche extends Vehiculo{
+    public function verKMRecorridos(){
+        return parent::$kilometrosRecorridos;
     }
-    public function avanza(){
-
-    }
-    public function quemaRueda(){
-
+    public function quemarRueda(){
+        return "Quemando rueda";
     }
     public function llenarDeposito(){
-
+        return "Depósito lleno";
     }
-    public function verKMRecorridos(){
-
-    }
+    
     
 }
 ?>

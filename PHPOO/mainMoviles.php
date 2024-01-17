@@ -12,7 +12,6 @@ print $m2 . "<br>\n";
 $m1->llama($m2, 320);
 $m1->llama($m3, 200);
 $m2->llama($m3, 550);
-$m3->llama($m1, 0);
 print $m1 . "<br>\n";
 print $m2 . "<br>\n";
 print $m3 . "<br>\n";

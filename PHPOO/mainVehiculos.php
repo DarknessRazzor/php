@@ -3,24 +3,25 @@
  * author Silvia Vilar
  * Ej3UD8 - mainVehiculos.php
  */
+include "Vehiculo.php";
 include "Bicicleta.php";
 include "Coche.php";
 $bicicleta = new Bicicleta();
 $coche = new Coche();
 do {
-    echo "MENU PRINCIPAL<br>\n";
-    echo "==============<br>\n";
-    echo "1. Avanza con la bicicleta<br>\n";
-    echo "2. Haz el caballito con la bicicleta<br>\n";
-    echo "3. Poner cadena de la bicicleta<br>\n";
-    echo "4. Avanza con el coche<br>\n";
-    echo "5. Quema rueda con el coche<br>\n";
-    echo "6. LLenar depósito del coche<br>\n";
-    echo "7. Ver kilometraje de la bicicleta<br>\n";
-    echo "8. Ver kilometraje del coche<br>\n";
-    echo "9. Ver kilometraje total<br>\n";
-    echo "X. Salir<br>\n";
-    echo "Elige una opción:<br>\n";
+    echo "MENU PRINCIPAL\n";
+    echo "==============\n";
+    echo "1. Avanza con la bicicleta\n";
+    echo "2. Haz el caballito con la bicicleta\n";
+    echo "3. Poner cadena de la bicicleta\n";
+    echo "4. Avanza con el coche\n";
+    echo "5. Quema rueda con el coche\n";
+    echo "6. LLenar depósito del coche\n";
+    echo "7. Ver kilometraje de la bicicleta\n";
+    echo "8. Ver kilometraje del coche\n";
+    echo "9. Ver kilometraje total\n";
+    echo "X. Salir\n";
+    echo "Elige una opción:\n";
     $opcion = readline();
     switch (strtoupper($opcion)) {
         case '1': //avanza con la bicicleta

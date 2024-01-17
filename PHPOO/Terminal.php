@@ -29,17 +29,10 @@ public function setSegundosTotales($segundosTotales){
 public function getSegundosTotales(){
     return $this->segundosTotales;
 }
-public function llama($objeto, $minutosTarifa){
-    $objeto->setTiempoConversacion($objeto->getTiempoConversacion()+$minutosTarifa);
-    $this->tiempoConversacion = $this->tiempoConversacion+$minutosTarifa;
-    $this->minutosTarifa = round($minutosTarifa/60);
-    $this->segundosTarifa = $minutosTarifa%60;
-    
-    $this->minutosTotales = round($this->tiempoConversacion/60);
-    $this->segundosTotales = $this->tiempoConversacion%60;
-}
-public function __construct(){
-
+public function llama($objeto, $segundosTarifa){
+    $objeto->setTiempoConversacion($objeto->getTiempoConversacion()+$segundosTarifa);
+    $this->tiempoConversacion = $this->tiempoConversacion+$segundosTarifa;
+   
 }
 }
 ?>
