@@ -1,6 +1,6 @@
 <?php
 /**
-* author Silvia Vilar
+* @author Adrián Oriola
 * Ej2UD8 - mainMoviles.php
 */
 include "Movil.php";

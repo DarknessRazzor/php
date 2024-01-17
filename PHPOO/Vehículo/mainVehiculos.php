@@ -1,6 +1,6 @@
 <?php
 /**
- * author Silvia Vilar
+ * @author Adrián Oriola
  * Ej3UD8 - mainVehiculos.php
  */
 include "Vehiculo.php";
