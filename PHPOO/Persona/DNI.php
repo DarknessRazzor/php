@@ -5,7 +5,6 @@ trait DNI{
         $restoNumAle = $numeroAleatorio % 23;
         $idLetra = $this->generarLetraDNI($restoNumAle);
         return $numeroAleatorio . $idLetra;
-
     }
     public function generarLetraDNI($idLetra){
         $letra = "TRWAGMYFPDXBNJZSQVHLCKE";

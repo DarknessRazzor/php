@@ -2,13 +2,13 @@
 include_once "Vehiculo.php";
 class Bicicleta extends Vehiculo{
     public function verKMRecorridos(){
-        return parent::$kilometrosRecorridos;
+        return parent::verKMRecorridos();
     }
-    public function hazCaballito(){
-        return "Haz un caballito!";
+    public function hacerCaballito(){
+        echo "Haz un caballito!\n";
     }
     public function ponerCadena(){
-        return "Cambiando la cadena de bici";
+        echo "Cambiando la cadena de bici\n";
     }
     
 }

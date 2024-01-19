@@ -24,10 +24,10 @@ class Persona {
         return $this->edad;
     }
     public function setSexo($sexo){
-        $this->sexo = $sexo;
+        $this->sexo = $this->comprobarSexo($sexo);
     }
     public function getSexo(){
-        return self::$sexo;
+        return $this->sexo;
     }
     public function setDNI($DNI){
         $this->DNI = $DNI;
@@ -68,18 +68,20 @@ class Persona {
         $persona = new self();
         $persona->nombre = $nombre;
         $persona->edad = $edad;
-        $persona->comprobarSexo($sexo);
+        $persona->setSexo($sexo);
         return $persona;
     }
     public function comprobarSexo($sexo){
-        if (!$sexo == "H" || !$sexo == "M"){
-            $this->setSexo("H");
+        $sexo = strtoupper($sexo);
+        echo "\n".$sexo."\n";
+        if ($sexo !== "H" && $sexo !== "M"){
+            return "H";
         } else {
-            $this->setSexo($sexo);
+            return $sexo; 
         }
     }
     public function strIMC(){
-        $this->calcularIMC();
+        return self::calcularIMC();
     }
     public function calcularIMC(){
         $imc = $this->peso / ($this->altura**2);
@@ -109,11 +111,11 @@ class Persona {
     public function __toString(){
         return "Información de la persona:\n".
         "DNI: ".$this->generarDNI()."\n".
-        "Nombre: ".$this->nombre."\n".
-        "Sexo: ".$this->sexo."\n".
-        "Edad: ".$this->edad."\n".
-        "Peso: ".$this->peso."\n".
-        "Altura: ".$this->altura."\n".
+        "Nombre: ".$this->getNombre()."\n".
+        "Sexo: ".($this->getSexo() === "H" ? "Hombre" : "Mujer")."\n".
+        "Edad: ".$this->getEdad()."\n".
+        "Peso: ".$this->getPeso()."\n".
+        "Altura: ".$this->getAltura()."\n".
         "Resultado IMC: ".$this->strIMC()."\n";
     }
 }

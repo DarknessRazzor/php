@@ -2,15 +2,13 @@
 include_once "Vehiculo.php";
 class Coche extends Vehiculo{
     public function verKMRecorridos(){
-        return parent::$kilometrosRecorridos;
+        return parent::verKMRecorridos();
     }
-    public function quemarRueda(){
-        return "Quemando rueda";
+    public function quemaRueda(){
+        echo "Quemando rueda\n";
     }
     public function llenarDeposito(){
-        return "Depósito lleno";
+        echo "Depósito lleno\n";
     }
-    
-    
 }
 ?>
