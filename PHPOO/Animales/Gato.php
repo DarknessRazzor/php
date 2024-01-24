@@ -1,5 +1,5 @@
 <?php 
-class Gato extends Mamifero {
+class Gato extends Mamifero{
     public $nombre;
     public $raza;
     public function setNombre($nombre){
@@ -16,6 +16,9 @@ class Gato extends Mamifero {
     }
     public function maulla(){
         return "Gato ".$this->getNombre().": Miauuuuu";
+    }
+    public function __toString(){
+        return parent::__toString().", en concreto un gato";
     }
 }
 ?>

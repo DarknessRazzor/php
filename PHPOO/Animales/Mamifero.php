@@ -1,12 +1,12 @@
 <?php 
 abstract class Mamifero extends Animal{
-    public $totalMamifero;
+    public static $totalMamifero;
 
-    public function setTotalMamifero($totalMamifero){
+    public function setTotalMamiferos($totalMamifero){
         $this->totalMamifero = $$totalMamifero;
     }
-    public function getTotalMamifero(){
-        return self::$totalMamifero;
+    public static function getTotalMamiferos(){
+        echo  "Hay un total de ".self::$totalAnimales." mamíferos\n";
     }
     public function amamantar(){
 
@@ -15,7 +15,7 @@ abstract class Mamifero extends Animal{
 
     }
     public function __toString(){
-        return "";
+        return parent::__toString().", un mamífero";
     }
 }
 ?>

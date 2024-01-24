@@ -1,12 +1,13 @@
 <?php 
+include_once "Animal.php";
 abstract class Ave extends Animal{
-    public $totalAves;
+    public static $totalAves;
 
     public function setTotalAves($totalAves){
         $this->totalAves = $totalAves;
     }
     public static function getTotalAves(){
-        return self::$totalAves;
+        echo  "Hay un total de ".self::$totalAnimales." aves\n";
     }
     public function ponerHuevo(){
 
@@ -15,7 +16,7 @@ abstract class Ave extends Animal{
 
     }
     public function __toString(){
-        return "";
+        return parent::__toString().", un ave";
     }
 }
 ?>

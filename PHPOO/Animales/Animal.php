@@ -1,7 +1,7 @@
 <?php 
 abstract class Animal{
     public $sexo = "M";
-    public $totalAnimales;
+    public static $totalAnimales = 0;
     public function setSexo($sexo){
         $this->sexo = $sexo;
     }
@@ -12,13 +12,13 @@ abstract class Animal{
         $this->totalAnimales = $totalAnimales;
     }
     public static function getTotalAnimales(){
-        return self::$totalAnimales;
+        echo  "Hay un total de ".self::$totalAnimales." animales\n";
     }
     public function dormirse(){
-
+        echo $this->getNombre().": Zzzzzzzzz\n";
     }
-    public function alimentarse($comida){
-
+    public function alimentarse($comida = null){
+        echo ", estoy comiendo ".$comida."\n";
     }
     public function morirse(){
 
@@ -40,7 +40,7 @@ abstract class Animal{
         return $static;
     }
     public function __toString(){
-        return "";
+        return "Soy un animal";
     }
 }
 
