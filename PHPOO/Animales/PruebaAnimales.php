@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Silvia Vilar
+ * @author Adrián Oriola
  * Ej6UD8 - PruebaAnimales.php
  */
 include_once "Canario.php";

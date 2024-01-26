@@ -11,9 +11,6 @@ abstract class Mamifero extends Animal{
     public function amamantar(){
 
     }
-    public function __construct(){
-
-    }
     public function __toString(){
         return parent::__toString().", un mamífero";
     }

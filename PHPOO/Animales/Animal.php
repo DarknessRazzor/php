@@ -18,26 +18,10 @@ abstract class Animal{
         echo $this->getNombre().": Zzzzzzzzz\n";
     }
     public function alimentarse($comida = null){
-        echo ", estoy comiendo ".$comida."\n";
+        return ": Estoy comiendo ".$comida."\n";
     }
     public function morirse(){
-
-    }
-    public function __construct(){
-        self::$totalAnimales++;
-    }
-    public static function consSexo($sexo){
-        $static = new static();
-        $static->sexo = $sexo;
-        self::$totalAnimales++;
-        return $static;
-    }
-    public static function consFull($sexo, $nombre){
-        $static = new static();
-        $static->sexo = $sexo;
-        $static->nombre = $nombre;
-        self::$totalAnimales++;
-        return $static;
+        
     }
     public function __toString(){
         return "Soy un animal";

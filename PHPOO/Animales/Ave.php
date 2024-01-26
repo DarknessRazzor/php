@@ -12,9 +12,6 @@ abstract class Ave extends Animal{
     public function ponerHuevo(){
 
     }
-    public function __construct(){
-
-    }
     public function __toString(){
         return parent::__toString().", un ave";
     }
